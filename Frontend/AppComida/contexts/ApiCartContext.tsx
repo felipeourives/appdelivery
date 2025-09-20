@@ -18,6 +18,8 @@ import Colors from "@/constants/Colors";
 import Texts from "@/constants/Texts";
 import { useNavigation } from "@react-navigation/native";
 import helpers from "@/helpers/helpers";
+import { router } from 'expo-router';
+
 
 import * as Location from "expo-location";
 import api from "@/services/api";
@@ -218,7 +220,7 @@ export const ApiCartProvider: React.FC<ApiCartProviderProps> = ({
             ...styles.cartContainer,
             paddingBottom: Platform.OS === "android" ? 15 : insets.bottom,
           }}
-          onPress={() => nav.navigate("cart")}
+          onPress={() => router.push('/cart')}
         >
           <Text
             style={{
