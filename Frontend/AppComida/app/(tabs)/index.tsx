@@ -55,8 +55,9 @@ function TabTwo() {
           </Text>
         </View>
       ) : null}
-      {estabelecimentos.map((e) => (
+      {estabelecimentos.map((e, index) => (
         <EstablishmentView
+          key={e.id || e.name || index}
           item={e}
           onPress={() => {
             setEstablishment(e);

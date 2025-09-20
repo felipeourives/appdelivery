@@ -4,7 +4,7 @@ import Colors from "@/constants/Colors";
 import helpers from "@/helpers/helpers";
 import Texts from "@/constants/Texts";
 
-const EstablishmentView = ({ item, onPress }) => {
+const EstablishmentView = ({ item, onPress } : { item: any, onPress: any }) => {
   const [distance, setDistance] = useState(null);
   async function init() {
     try {

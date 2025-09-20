@@ -10,8 +10,8 @@ import {
   Text,
   Image,
   StyleSheet,
-  SafeAreaView,
 } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const LoginScreen = () => {
   const [nome, setNome] = useState("André Silva");
