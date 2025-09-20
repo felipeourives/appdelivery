@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { MaterialIcons } from "@expo/vector-icons";
 import PaymentComponent from "@/components/PaymentComponent";
 import { useApi } from "@/contexts/ApiContext";
+import { router } from "expo-router";
 
 const cart = () => {
   const { setHiddenCart, cart, paymentMethod, submitCart, distance } =
@@ -38,8 +39,8 @@ const cart = () => {
       const res = await submitCart(await getUserData());
 
       if (res) {
-        nav.goBack();
-        nav.navigate("orders");
+        router.back();  
+        router.push('/orders');
       }
     } catch (e) {
       console.log(e);

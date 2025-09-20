@@ -44,14 +44,15 @@ const OrderList = ({ orders }: any) => {
             {helper.formatCurrency(totalDeliveryValue)}
           </Text>
         </View>
-        {orderItems.map((item: any) => renderOrderItem(item))}
+        {orderItems.map((item: any, index: number) => renderOrderItem(item, index))}
       </>
     );
   };
 
   // Renderizar um item de pedido
-  const renderOrderItem = (item) => (
+  const renderOrderItem = (item: any, index: number) => (
     <TouchableOpacity
+      key={item.Id || `order-${index}`}
       style={styles.orderItemContainer}
       onPress={() => nav.navigate("extract_view", item)}
     >

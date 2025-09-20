@@ -64,9 +64,9 @@ export default function TabTwoScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={{ alignItems: "center", paddingTop: 10 }}>
-        {myOrders?.map((e: any) => {
+        {myOrders?.map((e: any, index: number) => {
           return (
-            <View style={styles.containerStyle}>
+            <View key={e.Id || `order-${index}`} style={styles.containerStyle}>
               <View style={styles.contStl}>
                 <View style={styles.container2}>
                   <View style={styles.container3}>
