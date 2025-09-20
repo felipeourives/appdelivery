@@ -51,7 +51,7 @@ export default function Establishment() {
     >
       <HeaderMain hiddenOpen={true} hiddenBack={false} />
       {cadProdcts?.map((category: any) => (
-        <View style={{ width: "100%" }}>
+        <View key={category.Id} style={{ width: "100%" }}>
           <ProductCategory key={category.Id} category={category} />
         </View>
       ))}

@@ -11,8 +11,9 @@ function Payments() {
   const { setPaymentMethod } = useCartApi();
   return (
     <View style={styles.container}>
-      {PAYMENT_TYPE.map((e) => (
+      {PAYMENT_TYPE.map((e, index) => (
         <PaymentComponent
+          key={e.Id || `payment-${index}`}
           hiddenTitle={false}
           title={Texts[e.type]}
           icon={e.icon}
