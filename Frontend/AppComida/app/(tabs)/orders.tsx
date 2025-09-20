@@ -17,6 +17,11 @@ export default function TabTwoScreen() {
   const [intervalId, setIntervalId] = useState<any>(null);
 
   function sortObjectsByLastModified(arr: any) {
+
+    if (!arr || !Array.isArray(arr)) {
+      return [];
+    }
+
     arr.sort((a: any, b: any) => {
       if (a.lastModified === undefined) {
         return -1;
