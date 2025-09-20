@@ -160,7 +160,7 @@ function HomeDelivery() {
             onPress={() => {}}
           >
             {marker?.icon ? (
-              <Image source={marker?.icon} style={styles.markerImage} />
+              <Image source={marker?.icon} style={styles.markerImage} style={{ width: 32, height: 32 }} resizeMode="contain"/>
             ) : null}
           </Marker>
         ))}
