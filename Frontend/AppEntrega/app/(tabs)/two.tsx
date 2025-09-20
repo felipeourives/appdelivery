@@ -10,7 +10,7 @@ import Texts from "@/constants/Texts";
 import { useIsFocused } from "@react-navigation/native";
 
 export default function TabTwoScreen() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState([] as any[]);
   const [load, setLoad] = useState(true);
   const { user } = useAuthApi();
   const isFocused = useIsFocused();
@@ -21,9 +21,10 @@ export default function TabTwoScreen() {
       const { data } = await api.get(
         "/api/delivery/deliveryman/extrato/" + user.id
       );
-      setOrders(data);
+      setOrders(Array.isArray(data) ? data : []);
     } catch (e) {
       console.log(e);
+      setOrders([]);
     }
     setLoad(false);
   }
