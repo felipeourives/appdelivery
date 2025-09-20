@@ -8,9 +8,9 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
-  SafeAreaView,
   ActivityIndicator,
 } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import RegisterScreen from "./cadastro";
 
 const LoginScreen = () => {
