@@ -5,7 +5,7 @@ import api from "@/services/api";
 import { Buffer } from "buffer";
 import useWebSocket from "react-use-websocket";
 import Strings from "@/constants/Strings";
-import { useNavigation } from "expo-router";
+import { router, useNavigation } from "expo-router";
 import * as React from "react";
 import { Alert } from "react-native";
 
@@ -124,7 +124,7 @@ const AuthProvider = ({ children }: any) => {
       };
 
       setUser(decodedToken);
-      nav.navigate("index");
+      router.replace('/');
       setIsLoading(false);
     } catch (error) {
       console.error("Erro ao fazer login:", error);
@@ -167,7 +167,7 @@ const AuthProvider = ({ children }: any) => {
       };
 
       setUser(decodedToken);
-      nav.navigate("index");
+      router.replace('/');
       setIsLoading(false);
     } catch (error) {
       Alert.alert(
