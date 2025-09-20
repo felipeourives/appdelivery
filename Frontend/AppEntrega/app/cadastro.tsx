@@ -8,9 +8,10 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
-  SafeAreaView,
   ActivityIndicator,
 } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const RegisterScreen = ({ setRegister }: any) => {
   const [email, setEmail] = useState("admin@admin.com");
