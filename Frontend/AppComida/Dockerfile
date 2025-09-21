@@ -18,8 +18,7 @@ RUN npm install -g qrcode-terminal
 
 # Copia do app.json para o diretório de trabalho e instalação de dependências
 COPY app.json /usr/src/app/
-RUN npm install
-RUN yarn
+RUN yarn install
 
 # Instalação global do expo-cli
 RUN yarn global add expo-cli
